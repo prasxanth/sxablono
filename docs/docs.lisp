@@ -309,7 +309,7 @@ ln -s ~/lisp/spectre ~/quicklisp/local-projects/spectre
   ;; Update only html file in build/
   (mgl-pax:update-asdf-system-html-docs
    @index :sxablono
-   :target-dir "docs/build/"
+   :target-dir "build/"
    :update-css-p nil
    :pages `((:objects (,sxablono.docs:@index))))
 
@@ -323,11 +323,11 @@ ln -s ~/lisp/spectre ~/quicklisp/local-projects/spectre
     (for docs-path% = (if (probe-file input-file%)
 			  input-file%
 			  (make-pathname
-			   :directory '(:relative "docs")
+			   :directory '(:relative ".")
 			   :name default-name%
 			   :type default-type%)))
     (for build-path% = (make-pathname
-			:directory '(:relative "docs" "build")
+			:directory '(:relative "build")
 			:name default-name%
 			:type default-type%))
 
