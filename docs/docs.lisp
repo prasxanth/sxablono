@@ -8,7 +8,7 @@ This is a skeleton template for a Lisp project that includes **tests** and **doc
 Project name: **sxablono** `=>` *skeleton* in Esperanto!
 </blockquote>
 
-Homepage: https://prasxanth.github.io/sxablono/
+Homepage: [https://prasxanth.github.io/sxablono/](https://prasxanth.github.io/sxablono/)
 "
   (@project-structure section)
   (@how-to-use section)
@@ -294,41 +294,14 @@ ln -s ~/lisp/spectre ~/quicklisp/local-projects/spectre
   (@aux section)
   (@utils section))
 
-(defvar *defaults-css-and-js*
-  '((:name "style" :type "css")
-    (:name "jquery.min" :type "js")
-    (:name "toc.min" :type "js"))
-  "Default stylesheet and javascript files for html version of documentation.")
-
-(defun build (&key (css #P"\0")
-		(jquery #P"\0") (toc #P"\0"))
+(defun build ()
 
   ;; Update READMEs
   (mgl-pax:update-asdf-system-readmes @index :sxablono)
 
-  ;; Update only html file in build/
+  ;; Update html file only
   (mgl-pax:update-asdf-system-html-docs
    @index :sxablono
-   :target-dir "build/"
+   :target-dir "."
    :update-css-p nil
-   :pages `((:objects (,sxablono.docs:@index))))
-
-  ;; Copy CSS and JS files to build/
-  ;; If these do not exist then copy the defaults from docs/
-  (iter
-    (for input-file% in (list css jquery toc))
-    (for default% in *defaults-css-and-js*)
-    (for default-name% = (getf default% :name))
-    (for default-type% = (getf default% :type))
-    (for docs-path% = (if (probe-file input-file%)
-			  input-file%
-			  (make-pathname
-			   :directory '(:relative ".")
-			   :name default-name%
-			   :type default-type%)))
-    (for build-path% = (make-pathname
-			:directory '(:relative "build")
-			:name default-name%
-			:type default-type%))
-
-    (uiop:copy-file docs-path% build-path%)))
+   :pages `((:objects (,sxablono.docs:@index)))))
