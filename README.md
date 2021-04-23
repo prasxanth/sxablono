@@ -18,6 +18,7 @@ This is a skeleton template for a Lisp project that includes **tests** and **doc
 <blockquote class="note">
 Project name: **sxablono** `=>` *skeleton* in Esperanto!
 </blockquote>
+Homepage: https://prasxanth.github.io/sxablono/
 
 <a id='x-28SXABLONO-2EDOCS-3A-40PROJECT-STRUCTURE-20MGL-PAX-3ASECTION-29'></a>
 

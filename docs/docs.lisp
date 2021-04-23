@@ -7,6 +7,8 @@ This is a skeleton template for a Lisp project that includes **tests** and **doc
 <blockquote class=\"note\">
 Project name: **sxablono** `=>` *skeleton* in Esperanto!
 </blockquote>
+
+Homepage: https://prasxanth.github.io/sxablono/
 "
   (@project-structure section)
   (@how-to-use section)
