@@ -27,26 +27,27 @@
 <div id="content">
 <p><a id='x-28SXABLONO-2EDOCS-3A-40INDEX-20MGL-PAX-3ASECTION-29'></a></p>
 
-<p><span class="outer-navigation"><span class="navigation"> <a href="#x-28SXABLONO-2EDOCS-3A-40PROJECT-STRUCTURE-20MGL-PAX-3ASECTION-29" title="Project Structure">&#8594;</a> <a href="#x-28SXABLONO-2EDOCS-3A-40INDEX-20MGL-PAX-3ASECTION-29" title="Skeleton Template for Lisp Project">&#8634;</a></span></span></p>
+<p><span class="outer-navigation"><span class="navigation"> <a href="#x-28SXABLONO-2EDOCS-3A-40ASDF-DETAILS-20MGL-PAX-3ASECTION-29" title="ASDF Details">&#8594;</a> <a href="#x-28SXABLONO-2EDOCS-3A-40INDEX-20MGL-PAX-3ASECTION-29" title="Skeleton Template for Lisp Project">&#8634;</a></span></span></p>
 
 <h1><a href="#x-28SXABLONO-2EDOCS-3A-40INDEX-20MGL-PAX-3ASECTION-29">Skeleton Template for Lisp Project</a></h1>
 
 <h2>Table of Contents</h2>
 
 <ul>
-<li><a href="#x-28SXABLONO-2EDOCS-3A-40PROJECT-STRUCTURE-20MGL-PAX-3ASECTION-29" title="Project Structure">1 Project Structure</a>
+<li><a href="#x-28SXABLONO-2EDOCS-3A-40ASDF-DETAILS-20MGL-PAX-3ASECTION-29" title="ASDF Details">1 ASDF Details</a></li>
+<li><a href="#x-28SXABLONO-2EDOCS-3A-40PROJECT-STRUCTURE-20MGL-PAX-3ASECTION-29" title="Project Structure">2 Project Structure</a>
 
 <ul>
-<li><a href="#x-28SXABLONO-2EDOCS-3A-40SOURCE-CODE-20MGL-PAX-3ASECTION-29" title="Source Code">1.1 Source Code</a></li>
-<li><a href="#x-28SXABLONO-2EDOCS-3A-40TESTS-20MGL-PAX-3ASECTION-29" title="Tests">1.2 Tests</a></li>
-<li><a href="#x-28SXABLONO-2EDOCS-3A-40DOCUMENTATION-20MGL-PAX-3ASECTION-29" title="Documentation">1.3 Documentation</a></li>
+<li><a href="#x-28SXABLONO-2EDOCS-3A-40SOURCE-CODE-20MGL-PAX-3ASECTION-29" title="Source Code">2.1 Source Code</a></li>
+<li><a href="#x-28SXABLONO-2EDOCS-3A-40TESTS-20MGL-PAX-3ASECTION-29" title="Tests">2.2 Tests</a></li>
+<li><a href="#x-28SXABLONO-2EDOCS-3A-40DOCUMENTATION-20MGL-PAX-3ASECTION-29" title="Documentation">2.3 Documentation</a></li>
 </ul></li>
-<li><a href="#x-28SXABLONO-2EDOCS-3A-40HOW-TO-USE-20MGL-PAX-3ASECTION-29" title="How to Use">2 How to Use</a></li>
-<li><a href="#x-28SXABLONO-2EDOCS-3A-40API-REFERENCE-20MGL-PAX-3ASECTION-29" title="API Reference">3 API Reference</a>
+<li><a href="#x-28SXABLONO-2EDOCS-3A-40HOW-TO-USE-20MGL-PAX-3ASECTION-29" title="How to Use">3 How to Use</a></li>
+<li><a href="#x-28SXABLONO-2EDOCS-3A-40API-REFERENCE-20MGL-PAX-3ASECTION-29" title="API Reference">4 API Reference</a>
 
 <ul>
-<li><a href="#x-28SXABLONO-3A-40AUX-20MGL-PAX-3ASECTION-29" title="Auxillary Functions">3.1 Auxillary Functions</a></li>
-<li><a href="#x-28SXABLONO-3A-40UTILS-20MGL-PAX-3ASECTION-29" title="Utility Functions">3.2 Utility Functions</a></li>
+<li><a href="#x-28SXABLONO-3A-40AUX-20MGL-PAX-3ASECTION-29" title="Auxillary Functions">4.1 Auxillary Functions</a></li>
+<li><a href="#x-28SXABLONO-3A-40UTILS-20MGL-PAX-3ASECTION-29" title="Utility Functions">4.2 Utility Functions</a></li>
 </ul></li>
 </ul>
 
@@ -55,14 +56,54 @@
 <p>This is a skeleton template for a Lisp project that includes <strong>tests</strong> and <strong>documentation</strong> facilities. The purpose of this project is to create a starting point for the development of new <em>small/medium</em> libraries. Testing uses the <a href="https://github.com/lispci/fiveam" >FIVEAM</a> framework. Documentation uses the <a href="http://melisgl.github.io/mgl-pax/" >MGL-PAX</a> system.
 <blockquote class="note">
 Project name: <strong>sxablono</strong> <code>=&gt;</code> <em>skeleton</em> in Esperanto!
-</blockquote>
-Homepage: https://prasxanth.github.io/sxablono/</p>
+</blockquote></p>
+
+<p><a id='x-28SXABLONO-2EDOCS-3A-40ASDF-DETAILS-20MGL-PAX-3ASECTION-29'></a></p>
+
+<p><span class="outer-navigation"><span class="navigation"> <a href="#x-28SXABLONO-2EDOCS-3A-40INDEX-20MGL-PAX-3ASECTION-29" title="Skeleton Template for Lisp Project">&#8592;</a> <a href="#x-28SXABLONO-2EDOCS-3A-40INDEX-20MGL-PAX-3ASECTION-29" title="Skeleton Template for Lisp Project">&#8593;</a> <a href="#x-28SXABLONO-2EDOCS-3A-40PROJECT-STRUCTURE-20MGL-PAX-3ASECTION-29" title="Project Structure">&#8594;</a> <a href="#x-28SXABLONO-2EDOCS-3A-40ASDF-DETAILS-20MGL-PAX-3ASECTION-29" title="ASDF Details">&#8634;</a></span></span></p>
+
+<h2><a href="#x-28SXABLONO-2EDOCS-3A-40ASDF-DETAILS-20MGL-PAX-3ASECTION-29">1 ASDF Details</a></h2>
+
+<table class="table table-bordered table-hover table-condensed">
+<tbody><tr>
+<td>Version</td>
+<td> 1.0.0</td>
+</tr>
+<tr>
+<td>Description</td>
+<td> Skeleton template for Lisp project with test and documentation generator.</td>
+</tr>
+<tr>
+<td>License</td>
+<td> Unlicense.</td>
+</tr>
+<tr>
+<td>Author</td>
+<td> Prashanth Kumar</td>
+</tr>
+<tr>
+<td>Mailto</td>
+<td> prasxanth.kumar@gmail.com</td>
+</tr>
+<tr>
+<td>Homepage</td>
+<td> http://prasxanth.github.io/sxablono/</td>
+</tr>
+<tr>
+<td>Bug tracker</td>
+<td> https://github.com/prasxanth/sxablono/issues</td>
+</tr>
+<tr>
+<td>Source control</td>
+<td> http://github.com/sxablono.git</td>
+</tr>
+</tbody></table>
 
 <p><a id='x-28SXABLONO-2EDOCS-3A-40PROJECT-STRUCTURE-20MGL-PAX-3ASECTION-29'></a></p>
 
-<p><span class="outer-navigation"><span class="navigation"> <a href="#x-28SXABLONO-2EDOCS-3A-40INDEX-20MGL-PAX-3ASECTION-29" title="Skeleton Template for Lisp Project">&#8592;</a> <a href="#x-28SXABLONO-2EDOCS-3A-40INDEX-20MGL-PAX-3ASECTION-29" title="Skeleton Template for Lisp Project">&#8593;</a> <a href="#x-28SXABLONO-2EDOCS-3A-40SOURCE-CODE-20MGL-PAX-3ASECTION-29" title="Source Code">&#8594;</a> <a href="#x-28SXABLONO-2EDOCS-3A-40PROJECT-STRUCTURE-20MGL-PAX-3ASECTION-29" title="Project Structure">&#8634;</a></span></span></p>
+<p><span class="outer-navigation"><span class="navigation"> <a href="#x-28SXABLONO-2EDOCS-3A-40ASDF-DETAILS-20MGL-PAX-3ASECTION-29" title="ASDF Details">&#8592;</a> <a href="#x-28SXABLONO-2EDOCS-3A-40INDEX-20MGL-PAX-3ASECTION-29" title="Skeleton Template for Lisp Project">&#8593;</a> <a href="#x-28SXABLONO-2EDOCS-3A-40SOURCE-CODE-20MGL-PAX-3ASECTION-29" title="Source Code">&#8594;</a> <a href="#x-28SXABLONO-2EDOCS-3A-40PROJECT-STRUCTURE-20MGL-PAX-3ASECTION-29" title="Project Structure">&#8634;</a></span></span></p>
 
-<h2><a href="#x-28SXABLONO-2EDOCS-3A-40PROJECT-STRUCTURE-20MGL-PAX-3ASECTION-29">1 Project Structure</a></h2>
+<h2><a href="#x-28SXABLONO-2EDOCS-3A-40PROJECT-STRUCTURE-20MGL-PAX-3ASECTION-29">2 Project Structure</a></h2>
 
 <p>The file and folder structure for the project are organized as follows,</p>
 
@@ -101,7 +142,7 @@ Homepage: https://prasxanth.github.io/sxablono/</p>
 
 <p><span class="outer-navigation"><span class="navigation"> <a href="#x-28SXABLONO-2EDOCS-3A-40PROJECT-STRUCTURE-20MGL-PAX-3ASECTION-29" title="Project Structure">&#8592;</a> <a href="#x-28SXABLONO-2EDOCS-3A-40PROJECT-STRUCTURE-20MGL-PAX-3ASECTION-29" title="Project Structure">&#8593;</a> <a href="#x-28SXABLONO-2EDOCS-3A-40TESTS-20MGL-PAX-3ASECTION-29" title="Tests">&#8594;</a> <a href="#x-28SXABLONO-2EDOCS-3A-40SOURCE-CODE-20MGL-PAX-3ASECTION-29" title="Source Code">&#8634;</a></span></span></p>
 
-<h3><a href="#x-28SXABLONO-2EDOCS-3A-40SOURCE-CODE-20MGL-PAX-3ASECTION-29">1.1 Source Code</a></h3>
+<h3><a href="#x-28SXABLONO-2EDOCS-3A-40SOURCE-CODE-20MGL-PAX-3ASECTION-29">2.1 Source Code</a></h3>
 
 <p>The <code>src/</code> folder contains all the <strong>core</strong> package files,</p>
 
@@ -130,7 +171,7 @@ Homepage: https://prasxanth.github.io/sxablono/</p>
 
 <p><span class="outer-navigation"><span class="navigation"> <a href="#x-28SXABLONO-2EDOCS-3A-40SOURCE-CODE-20MGL-PAX-3ASECTION-29" title="Source Code">&#8592;</a> <a href="#x-28SXABLONO-2EDOCS-3A-40PROJECT-STRUCTURE-20MGL-PAX-3ASECTION-29" title="Project Structure">&#8593;</a> <a href="#x-28SXABLONO-2EDOCS-3A-40DOCUMENTATION-20MGL-PAX-3ASECTION-29" title="Documentation">&#8594;</a> <a href="#x-28SXABLONO-2EDOCS-3A-40TESTS-20MGL-PAX-3ASECTION-29" title="Tests">&#8634;</a></span></span></p>
 
-<h3><a href="#x-28SXABLONO-2EDOCS-3A-40TESTS-20MGL-PAX-3ASECTION-29">1.2 Tests</a></h3>
+<h3><a href="#x-28SXABLONO-2EDOCS-3A-40TESTS-20MGL-PAX-3ASECTION-29">2.2 Tests</a></h3>
 
 <p>The <a href="https://github.com/lispci/fiveam" >FIVEAM</a> framework is used for testing,</p>
 
@@ -163,7 +204,7 @@ Homepage: https://prasxanth.github.io/sxablono/</p>
 
 <p><span class="outer-navigation"><span class="navigation"> <a href="#x-28SXABLONO-2EDOCS-3A-40TESTS-20MGL-PAX-3ASECTION-29" title="Tests">&#8592;</a> <a href="#x-28SXABLONO-2EDOCS-3A-40PROJECT-STRUCTURE-20MGL-PAX-3ASECTION-29" title="Project Structure">&#8593;</a> <a href="#x-28SXABLONO-2EDOCS-3A-40HOW-TO-USE-20MGL-PAX-3ASECTION-29" title="How to Use">&#8594;</a> <a href="#x-28SXABLONO-2EDOCS-3A-40DOCUMENTATION-20MGL-PAX-3ASECTION-29" title="Documentation">&#8634;</a></span></span></p>
 
-<h3><a href="#x-28SXABLONO-2EDOCS-3A-40DOCUMENTATION-20MGL-PAX-3ASECTION-29">1.3 Documentation</a></h3>
+<h3><a href="#x-28SXABLONO-2EDOCS-3A-40DOCUMENTATION-20MGL-PAX-3ASECTION-29">2.3 Documentation</a></h3>
 
 <p><a href="http://melisgl.github.io/mgl-pax/" >MGL-PAX</a> is used to generate the documentation.</p>
 
@@ -220,7 +261,7 @@ Homepage: https://prasxanth.github.io/sxablono/</p>
 
 <p><span class="outer-navigation"><span class="navigation"> <a href="#x-28SXABLONO-2EDOCS-3A-40DOCUMENTATION-20MGL-PAX-3ASECTION-29" title="Documentation">&#8592;</a> <a href="#x-28SXABLONO-2EDOCS-3A-40INDEX-20MGL-PAX-3ASECTION-29" title="Skeleton Template for Lisp Project">&#8593;</a> <a href="#x-28SXABLONO-2EDOCS-3A-40API-REFERENCE-20MGL-PAX-3ASECTION-29" title="API Reference">&#8594;</a> <a href="#x-28SXABLONO-2EDOCS-3A-40HOW-TO-USE-20MGL-PAX-3ASECTION-29" title="How to Use">&#8634;</a></span></span></p>
 
-<h2><a href="#x-28SXABLONO-2EDOCS-3A-40HOW-TO-USE-20MGL-PAX-3ASECTION-29">2 How to Use</a></h2>
+<h2><a href="#x-28SXABLONO-2EDOCS-3A-40HOW-TO-USE-20MGL-PAX-3ASECTION-29">3 How to Use</a></h2>
 
 <p>As an example, consider a project named <code>spectre</code>, in the <code>~/lisp</code> directory, used to analyze and plot <a href="https://en.wikipedia.org/wiki/Continuous_spectrum" >continous spectra</a> data. The core functionality is contained in two files, <code>analyze.lisp</code> and <code>plot.lisp</code>.</p>
 
@@ -304,13 +345,13 @@ Homepage: https://prasxanth.github.io/sxablono/</p>
 
 <p><span class="outer-navigation"><span class="navigation"> <a href="#x-28SXABLONO-2EDOCS-3A-40HOW-TO-USE-20MGL-PAX-3ASECTION-29" title="How to Use">&#8592;</a> <a href="#x-28SXABLONO-2EDOCS-3A-40INDEX-20MGL-PAX-3ASECTION-29" title="Skeleton Template for Lisp Project">&#8593;</a> <a href="#x-28SXABLONO-3A-40AUX-20MGL-PAX-3ASECTION-29" title="Auxillary Functions">&#8594;</a> <a href="#x-28SXABLONO-2EDOCS-3A-40API-REFERENCE-20MGL-PAX-3ASECTION-29" title="API Reference">&#8634;</a></span></span></p>
 
-<h2><a href="#x-28SXABLONO-2EDOCS-3A-40API-REFERENCE-20MGL-PAX-3ASECTION-29">3 API Reference</a></h2>
+<h2><a href="#x-28SXABLONO-2EDOCS-3A-40API-REFERENCE-20MGL-PAX-3ASECTION-29">4 API Reference</a></h2>
 
 <p><a id='x-28SXABLONO-3A-40AUX-20MGL-PAX-3ASECTION-29'></a></p>
 
 <p><span class="outer-navigation"><span class="navigation"> <a href="#x-28SXABLONO-2EDOCS-3A-40API-REFERENCE-20MGL-PAX-3ASECTION-29" title="API Reference">&#8592;</a> <a href="#x-28SXABLONO-2EDOCS-3A-40API-REFERENCE-20MGL-PAX-3ASECTION-29" title="API Reference">&#8593;</a> <a href="#x-28SXABLONO-3A-40UTILS-20MGL-PAX-3ASECTION-29" title="Utility Functions">&#8594;</a> <a href="#x-28SXABLONO-3A-40AUX-20MGL-PAX-3ASECTION-29" title="Auxillary Functions">&#8634;</a></span></span></p>
 
-<h3><a href="#x-28SXABLONO-3A-40AUX-20MGL-PAX-3ASECTION-29">3.1 Auxillary Functions</a></h3>
+<h3><a href="#x-28SXABLONO-3A-40AUX-20MGL-PAX-3ASECTION-29">4.1 Auxillary Functions</a></h3>
 
 <h6>[in package SXABLONO with nicknames SXBL]</h6>
 
@@ -367,7 +408,7 @@ references <a href="#x-28SXABLONO-3ADO-THE-JOB-20FUNCTION-29" title="(SXABLONO:D
 
 <p><span class="outer-navigation"><span class="navigation"> <a href="#x-28SXABLONO-3A-40AUX-20MGL-PAX-3ASECTION-29" title="Auxillary Functions">&#8592;</a> <a href="#x-28SXABLONO-2EDOCS-3A-40API-REFERENCE-20MGL-PAX-3ASECTION-29" title="API Reference">&#8593;</a> <a href="#x-28SXABLONO-3A-40UTILS-20MGL-PAX-3ASECTION-29" title="Utility Functions">&#8634;</a></span></span></p>
 
-<h3><a href="#x-28SXABLONO-3A-40UTILS-20MGL-PAX-3ASECTION-29">3.2 Utility Functions</a></h3>
+<h3><a href="#x-28SXABLONO-3A-40UTILS-20MGL-PAX-3ASECTION-29">4.2 Utility Functions</a></h3>
 
 <h6>[in package SXABLONO with nicknames SXBL]</h6>
 

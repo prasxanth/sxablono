@@ -4,25 +4,64 @@
 
 ## Table of Contents
 
-- [1 Project Structure][6462]
-    - [1.1 Source Code][a270]
-    - [1.2 Tests][427c]
-    - [1.3 Documentation][f309]
-- [2 How to Use][65a0]
-- [3 API Reference][1dda]
-    - [3.1 Auxillary Functions][c245]
-    - [3.2 Utility Functions][3dd7]
+- [1 ASDF Details][71b0]
+- [2 Project Structure][6462]
+    - [2.1 Source Code][a270]
+    - [2.2 Tests][427c]
+    - [2.3 Documentation][f309]
+- [3 How to Use][65a0]
+- [4 API Reference][1dda]
+    - [4.1 Auxillary Functions][c245]
+    - [4.2 Utility Functions][3dd7]
 
 ###### \[in package SXABLONO.DOCS with nicknames SXDOCS\]
 This is a skeleton template for a Lisp project that includes **tests** and **documentation** facilities. The purpose of this project is to create a starting point for the development of new *small/medium* libraries. Testing uses the [FIVEAM](https://github.com/lispci/fiveam) framework. Documentation uses the [MGL-PAX](http://melisgl.github.io/mgl-pax/) system.
 <blockquote class="note">
 Project name: **sxablono** `=>` *skeleton* in Esperanto!
 </blockquote>
-Homepage: https://prasxanth.github.io/sxablono/
+
+<a id='x-28SXABLONO-2EDOCS-3A-40ASDF-DETAILS-20MGL-PAX-3ASECTION-29'></a>
+
+## 1 ASDF Details
+
+<table class="table table-bordered table-hover table-condensed">
+<tbody><tr>
+<td>Version</td>
+<td> 1.0.0</td>
+</tr>
+<tr>
+<td>Description</td>
+<td> Skeleton template for Lisp project with test and documentation generator.</td>
+</tr>
+<tr>
+<td>License</td>
+<td> Unlicense.</td>
+</tr>
+<tr>
+<td>Author</td>
+<td> Prashanth Kumar</td>
+</tr>
+<tr>
+<td>Mailto</td>
+<td> prasxanth.kumar@gmail.com</td>
+</tr>
+<tr>
+<td>Homepage</td>
+<td> http://prasxanth.github.io/sxablono/</td>
+</tr>
+<tr>
+<td>Bug tracker</td>
+<td> https://github.com/prasxanth/sxablono/issues</td>
+</tr>
+<tr>
+<td>Source control</td>
+<td> http://github.com/sxablono.git</td>
+</tr>
+</tbody></table>  
 
 <a id='x-28SXABLONO-2EDOCS-3A-40PROJECT-STRUCTURE-20MGL-PAX-3ASECTION-29'></a>
 
-## 1 Project Structure
+## 2 Project Structure
 
 The file and folder structure for the project are organized as follows,
 
@@ -62,7 +101,7 @@ The following sections explain each of the components and directory contents in 
 
 <a id='x-28SXABLONO-2EDOCS-3A-40SOURCE-CODE-20MGL-PAX-3ASECTION-29'></a>
 
-### 1.1 Source Code
+### 2.1 Source Code
 
 The `src/` folder contains all the **core** package files,
 
@@ -93,7 +132,7 @@ The example files `aux.lisp` and `utils.lisp` contain the full definitions in th
 
 <a id='x-28SXABLONO-2EDOCS-3A-40TESTS-20MGL-PAX-3ASECTION-29'></a>
 
-### 1.2 Tests
+### 2.2 Tests
 
 The [FIVEAM](https://github.com/lispci/fiveam) framework is used for testing,
 
@@ -131,7 +170,7 @@ To run the tests using `ASDF`,
 
 <a id='x-28SXABLONO-2EDOCS-3A-40DOCUMENTATION-20MGL-PAX-3ASECTION-29'></a>
 
-### 1.3 Documentation
+### 2.3 Documentation
 
 [MGL-PAX](http://melisgl.github.io/mgl-pax/) is used to generate the documentation.
 
@@ -193,7 +232,7 @@ After generating the documentation, the folder structure should resemble,
 
 <a id='x-28SXABLONO-2EDOCS-3A-40HOW-TO-USE-20MGL-PAX-3ASECTION-29'></a>
 
-## 2 How to Use
+## 3 How to Use
 
 As an example, consider a project named `spectre`, in the `~/lisp` directory, used to analyze and plot [continous spectra](https://en.wikipedia.org/wiki/Continuous_spectrum) data. The core functionality is contained in two files, `analyze.lisp` and `plot.lisp`.
 
@@ -280,11 +319,11 @@ ln -s ~/lisp/spectre ~/quicklisp/local-projects/spectre
 
 <a id='x-28SXABLONO-2EDOCS-3A-40API-REFERENCE-20MGL-PAX-3ASECTION-29'></a>
 
-## 3 API Reference
+## 4 API Reference
 
 <a id='x-28SXABLONO-3A-40AUX-20MGL-PAX-3ASECTION-29'></a>
 
-### 3.1 Auxillary Functions
+### 4.1 Auxillary Functions
 
 ###### \[in package SXABLONO with nicknames SXBL\]
 This documentation is for the `aux.lisp` file.
@@ -341,7 +380,7 @@ references [`SXABLONO:DO-THE-JOB`][e1ae], which is desribed in [Utility Function
 
 <a id='x-28SXABLONO-3A-40UTILS-20MGL-PAX-3ASECTION-29'></a>
 
-### 3.2 Utility Functions
+### 4.2 Utility Functions
 
 ###### \[in package SXABLONO with nicknames SXBL\]
 <a id='x-28SXABLONO-3ADO-THE-JOB-20FUNCTION-29'></a>
@@ -380,6 +419,7 @@ references [`SXABLONO:DO-THE-JOB`][e1ae], which is desribed in [Utility Function
   [427c]: #x-28SXABLONO-2EDOCS-3A-40TESTS-20MGL-PAX-3ASECTION-29 "Tests"
   [6462]: #x-28SXABLONO-2EDOCS-3A-40PROJECT-STRUCTURE-20MGL-PAX-3ASECTION-29 "Project Structure"
   [65a0]: #x-28SXABLONO-2EDOCS-3A-40HOW-TO-USE-20MGL-PAX-3ASECTION-29 "How to Use"
+  [71b0]: #x-28SXABLONO-2EDOCS-3A-40ASDF-DETAILS-20MGL-PAX-3ASECTION-29 "ASDF Details"
   [7b82]: #x-28SXABLONO-3AFOO-20FUNCTION-29 "(SXABLONO:FOO FUNCTION)"
   [a270]: #x-28SXABLONO-2EDOCS-3A-40SOURCE-CODE-20MGL-PAX-3ASECTION-29 "Source Code"
   [c245]: #x-28SXABLONO-3A-40AUX-20MGL-PAX-3ASECTION-29 "Auxillary Functions"

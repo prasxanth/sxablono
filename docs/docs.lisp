@@ -7,12 +7,49 @@ This is a skeleton template for a Lisp project that includes **tests** and **doc
 <blockquote class=\"note\">
 Project name: **sxablono** `=>` *skeleton* in Esperanto!
 </blockquote>
-
-Homepage: https://prasxanth.github.io/sxablono/
 "
+  (@asdf-details section)
   (@project-structure section)
   (@how-to-use section)
   (@api-reference section))
+
+(defsection @asdf-details (:title "ASDF Details")
+  "
+<table class=\"table table-bordered table-hover table-condensed\">
+<tbody><tr>
+<td>Version</td>
+<td> 1.0.0</td>
+</tr>
+<tr>
+<td>Description</td>
+<td> Skeleton template for Lisp project with test and documentation generator.</td>
+</tr>
+<tr>
+<td>License</td>
+<td> Unlicense.</td>
+</tr>
+<tr>
+<td>Author</td>
+<td> Prashanth Kumar</td>
+</tr>
+<tr>
+<td>Mailto</td>
+<td> prasxanth.kumar@gmail.com</td>
+</tr>
+<tr>
+<td>Homepage</td>
+<td> http://prasxanth.github.io/sxablono/</td>
+</tr>
+<tr>
+<td>Bug tracker</td>
+<td> https://github.com/prasxanth/sxablono/issues</td>
+</tr>
+<tr>
+<td>Source control</td>
+<td> http://github.com/sxablono.git</td>
+</tr>
+</tbody></table>
+  ")
 
 
 (defsection @project-structure (:title "Project Structure")
