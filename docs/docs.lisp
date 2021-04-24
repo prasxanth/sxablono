@@ -8,7 +8,7 @@ This is a skeleton template for a Lisp project that includes **tests** and **doc
 Project name: **sxablono** `=>` *skeleton* in Esperanto!
 </blockquote>
 
-Homepage: [https://prasxanth.github.io/sxablono/](https://prasxanth.github.io/sxablono/)
+Homepage: https://prasxanth.github.io/sxablono/
 "
   (@project-structure section)
   (@how-to-use section)
@@ -293,6 +293,7 @@ ln -s ~/lisp/spectre ~/quicklisp/local-projects/spectre
 (defsection @api-reference (:title "API Reference")
   (@aux section)
   (@utils section))
+
 
 (defun build ()
 
