@@ -293,16 +293,3 @@ ln -s ~/lisp/spectre ~/quicklisp/local-projects/spectre
 (defsection @api-reference (:title "API Reference")
   (@aux section)
   (@utils section))
-
-
-(defun build ()
-
-  ;; Update READMEs
-  (mgl-pax:update-asdf-system-readmes @index :sxablono)
-
-  ;; Update html file only
-  (mgl-pax:update-asdf-system-html-docs
-   @index :sxablono
-   :target-dir "."
-   :update-css-p nil
-   :pages `((:objects (,sxablono.docs:@index)))))

@@ -36,6 +36,7 @@
   :pathname "docs/"
   :serial t
   :components ((:file "package")
+	       (:file "build")
 	       (:file "docs")
 	       (:static-file "styles.css")
 	       (:static-file "jquery.min.js")
