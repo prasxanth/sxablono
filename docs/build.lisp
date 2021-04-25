@@ -1,6 +1,9 @@
 (in-package #:sxablono.docs)
 
 (defun build ()
+  "
+Uses `MGL-PAX:UPDATE-ASDF-SYSTEM*` to generate `README` and `README.md` in the project root directory and `index.html` in the `docs/` sub-directory.
+  "
 
   ;; Update READMEs
   (mgl-pax:update-asdf-system-readmes @index :sxablono)
