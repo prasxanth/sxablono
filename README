@@ -3,54 +3,36 @@
 ###### \[in package SXABLONO.DOCS with nicknames SXDOCS\]
 This is a skeleton template for a Lisp project that includes **tests** and **documentation** facilities. The purpose of this project is to create a starting point for the development of new *small/medium* libraries. Testing uses the [FIVEAM](https://github.com/lispci/fiveam) framework. Documentation uses the [MGL-PAX](http://melisgl.github.io/mgl-pax/) system.
 <blockquote class="note">
-Project name: **sxablono** `=>` *skeleton* in Esperanto!
+Project name: **sxablono** `=>` *skeleton* in [Esperanto](https://en.wikipedia.org/wiki/Esperanto)!
 </blockquote>
 
 ## ASDF Details
 
-<table class="table table-bordered table-hover table-condensed">
-<tbody><tr>
-<td>Version</td>
-<td> 1.0.0</td>
-</tr>
-<tr>
-<td>Description</td>
-<td> Skeleton template for Lisp project with test and documentation generator.</td>
-</tr>
-<tr>
-<td>License</td>
-<td> Unlicense.</td>
-</tr>
-<tr>
-<td>Author</td>
-<td> Prashanth Kumar</td>
-</tr>
-<tr>
-<td>Mailto</td>
-<td> prasxanth.kumar@gmail.com</td>
-</tr>
-<tr>
-<td>Homepage</td>
-<td> http://prasxanth.github.io/sxablono/</td>
-</tr>
-<tr>
-<td>Bug tracker</td>
-<td> https://github.com/prasxanth/sxablono/issues</td>
-</tr>
-<tr>
-<td>Source control</td>
-<td> http://github.com/sxablono.git</td>
-</tr>
-</tbody></table>  
+- **Version**: 1.0.0
+
+- **Description**: Skeleton template for Lisp project with test and documentation generator.
+
+- **License**: Unlicense.
+
+- **Author**: Prashanth Kumar
+
+- **Mailto**: prasxanth.kumar@gmail.com
+
+- **Homepage**: http://prasxanth.github.io/sxablono/
+
+- **Bug tracker**: https://github.com/prasxanth/sxablono/issues
+
+- **Source control**: http://github.com/sxablono.git
+
 
 ## Project Structure
 
 The file and folder structure for the project are organized as follows,
 
 ```
-
 ├── LICENSE
 ├── docs
+│   ├── build.lisp
 │   ├── docs.lisp
 │   ├── jquery.min.js
 │   ├── package.lisp
@@ -76,7 +58,7 @@ There are three main directories for each of the components,
 
 - Documentation: `docs/`
 
-The `sxablono.asd` contains all the system defintions for the source code, tests and documentation. The `package.lisp` in each directory contains the respective package definitions. The license is documented in the `LICENSE` file.
+`sxablono.asd` contains all the system defintions for the source code, tests and documentation. The `package.lisp` file in each directory contains the respective package definitions. License documentation is in the `LICENSE` file.
 
 The following sections explain each of the components and directory contents in more detail.
   
@@ -95,17 +77,25 @@ The `src/` folder contains all the **core** package files,
 `package.lisp` contains the usual definitions for *use*, *imports* and *exports*,
 
 ```
-(uiop:read-file-string "docs/package.lisp")
-=> (defpackage #:sxablono.docs
-      (:nicknames #:sxdocs)
-      (:use #:cl)
-      (:import-from #:mgl-pax
-		    #:section
-		    #:defsection)
-      (:import-from #:sxablono
-		    #:@aux
-		    #:@utils)
-      (:export #:build))
+(uiop:read-file-string "../src/package.lisp")
+=> (defpackage #:sxablono
+   (:nicknames #:sxbl)
+   (:use #:cl)
+   (:import-from #:mgl-pax
+                 #:defsection)
+   (:export #:do-the-job
+	    #:foo)
+   (:documentation "This is docstring for the package.
+
+                   The package contains a function which does it's job by
+                   applying transformation to the first and second arguments.
+
+                   Note, despite the docstring indentation, it is displayed
+                   correctly. And PAX is smart enough to distinguish the common
+                   indentation and indentation of a code block below:
+
+                       (apply #'foo 42)
+                  "))
 ```
 
 The example files `aux.lisp` and `utils.lisp` contain the full definitions in the package (macros, functions etc.).
@@ -115,15 +105,13 @@ The example files `aux.lisp` and `utils.lisp` contain the full definitions in th
 The [FIVEAM](https://github.com/lispci/fiveam) framework is used for testing,
 
 ```
-(uiop:read-file-string "tests/package.lisp")
+(uiop:read-file-string "../tests/package.lisp")
 => (defpackage #:sxablono.tests
-       (:nicknames #:sxtests)
-       (:documentation "Unit tests for SXABLONO")
-       (:use #:cl #:fiveam)
-       (:shadowing-import-from #:sxablono
-			       #:foo
-			       #:do-the-job)
-       (:export #:principal-suite))
+   (:nicknames #:sxtests)
+   (:documentation "Unit tests for SXABLONO")
+   (:use #:cl #:fiveam #:sxablono)
+   (:export #:principal-suite
+  	    #:run-principal-suite))
 ```
 
 As per Common Lisp convention, the filename containing the tests for each corresponding file in the `src/` folder is suffixed with `-tests`. Hence, `utils-tests.lisp` contains all the tests for `src/utils.lisp`, and `aux-tests.lisp` for `src/aux.lisp`.
@@ -136,7 +124,7 @@ As per Common Lisp convention, the filename containing the tests for each corres
     └── utils-tests.lisp
 ```
 
-The `tests-suite.lisp` contains the `principal-suite` which is the parent suite for all the tests.
+The `tests-suite.lisp` contains `principal-suite`, the parent suite for all the tests.
 
 To run the tests using ASDF,
 
@@ -151,23 +139,24 @@ To run the tests using ASDF,
 [MGL-PAX](http://melisgl.github.io/mgl-pax/) is used to generate the documentation.
 
 ```
-(uiop:read-file-string "docs/package.lisp")
+(uiop:read-file-string "package.lisp")
 => (defpackage #:sxablono.docs
-     (:nicknames #:sxdocs)
-     (:use #:cl)
-     (:import-from #:mgl-pax
-		   #:section
-		   #:defsection)
-     (:import-from #:sxablono
-		   #:@aux
-		   #:@utils)
-     (:export #:build))
+   (:nicknames #:sxdocs)
+   (:use #:cl #:iterate)
+   (:import-from #:mgl-pax
+                 #:section
+                 #:defsection)
+   (:import-from #:sxablono
+                 #:@aux
+  		 #:@utils)
+   (:export #:build))
 ```
 
-`docs.lisp` contains the main narrative and contents. It includes both handwritten documentation and docstrings from functions in `src/`.
+`docs.lisp` contains the main narrative and contents. It includes both *handwritten* documentation and docstrings from functions in `src/`.
 
 ```
 ├── docs
+│   ├── build.lisp
 │   ├── docs.lisp
 │   ├── jquery.min.js
 │   ├── package.lisp
@@ -175,17 +164,13 @@ To run the tests using ASDF,
 │   └── toc.min.js
 ```
 
-Documentation is generated using the `build` function.
+Documentation is generated using the `build` function defined in `build.lisp`.
 
 This does the following,
 
-- Updates *only* the html file in `docs/build/`. The `build/` sub-directory is created if it does not exist.
+- Updates *only* the `index.html` file. This file is created if it does not exist.
 
-- Copies `style.css`, `jquery.min.js` and `tocs.min.js` from `docs/` to `docs/build/`. `style.css` is a custom stylesheet.
-
-- Generates and overwrites the `README` and `README.md` files in the `spectre/` root directory
-
-Custom CSS and JS files can be provided as arguments to the build function. If these files are not found, then the defaults are copied from `docs/`.
+- Generates and overwrites the `README` and `README.md` files in the project root directory
 
 After generating the documentation, the folder structure should resemble,
 
@@ -193,18 +178,18 @@ After generating the documentation, the folder structure should resemble,
 ├── README
 ├── README.md
 ├── docs
-│   ├── build
-│   │   ├── index.html
-│   │   ├── jquery.min.js
-│   │   ├── style.css
-│   │   └── toc.min.js
+│   ├── build.lisp
 │   ├── docs.lisp
+│   ├── index.html
 │   ├── jquery.min.js
 │   ├── package.lisp
 │   ├── style.css
 │   └── toc.min.js
 ```
 
+A single `index.html` simplifies maintenance. It also eases [hosting on Github](https://pages.github.com/).
+
+Larger documentation (distributed across multiple files) can be placed in a separate `build/` sub-directory. However, this makes the process of hosting the documentation slightly more complicated as the contents have to be moved or copied to the `gh-pages` branch of the repository.
 
 ## How to Use
 
@@ -250,6 +235,7 @@ As an example, consider a project named `spectre`, in the `~/lisp` directory, us
 ```
 ├── LICENSE
 ├── docs
+│   ├── build.lisp
 │   ├── docs.lisp
 │   ├── jquery.min.js
 │   ├── package.lisp
@@ -265,7 +251,6 @@ As an example, consider a project named `spectre`, in the `~/lisp` directory, us
     ├── package.lisp
     ├── plot-tests.lisp
     └── tests-suite.lisp
-
 ```
 </li><li> Create a softlink to `~/quicklisp/local-projects`,
 
@@ -288,6 +273,33 @@ ln -s ~/lisp/spectre ~/quicklisp/local-projects/spectre
 (ql:quickload :spectre.docs)
 (spectre.docs:build)
 ```
+
+The folder structure should now look like,
+
+```
+├── LICENSE
+├── README
+├── README.md
+├── docs
+│   ├── build.lisp
+│   ├── docs.lisp
+│   ├── index.html
+│   ├── jquery.min.js
+│   ├── package.lisp
+│   ├── style.css
+│   └── toc.min.js
+├── spectre.asd
+├── src
+│   ├── analyze.lisp
+│   ├── package.lisp
+│   └── plot.lisp
+└── tests
+    ├── analyze-tests.lisp
+    ├── package.lisp
+    ├── plot-tests.lisp
+    └── tests-suite.lisp
+```
+
 </li>
 </ol>
 

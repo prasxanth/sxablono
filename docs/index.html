@@ -55,7 +55,7 @@
 
 <p>This is a skeleton template for a Lisp project that includes <strong>tests</strong> and <strong>documentation</strong> facilities. The purpose of this project is to create a starting point for the development of new <em>small/medium</em> libraries. Testing uses the <a href="https://github.com/lispci/fiveam" >FIVEAM</a> framework. Documentation uses the <a href="http://melisgl.github.io/mgl-pax/" >MGL-PAX</a> system.
 <blockquote class="note">
-Project name: <strong>sxablono</strong> <code>=&gt;</code> <em>skeleton</em> in Esperanto!
+Project name: <strong>sxablono</strong> <code>=&gt;</code> <em>skeleton</em> in <a href="https://en.wikipedia.org/wiki/Esperanto" >Esperanto</a>!
 </blockquote></p>
 
 <p><a id='x-28SXABLONO-2EDOCS-3A-40ASDF-DETAILS-20MGL-PAX-3ASECTION-29'></a></p>
@@ -64,40 +64,16 @@ Project name: <strong>sxablono</strong> <code>=&gt;</code> <em>skeleton</em> in 
 
 <h2><a href="#x-28SXABLONO-2EDOCS-3A-40ASDF-DETAILS-20MGL-PAX-3ASECTION-29">1 ASDF Details</a></h2>
 
-<table class="table table-bordered table-hover table-condensed">
-<tbody><tr>
-<td>Version</td>
-<td> 1.0.0</td>
-</tr>
-<tr>
-<td>Description</td>
-<td> Skeleton template for Lisp project with test and documentation generator.</td>
-</tr>
-<tr>
-<td>License</td>
-<td> Unlicense.</td>
-</tr>
-<tr>
-<td>Author</td>
-<td> Prashanth Kumar</td>
-</tr>
-<tr>
-<td>Mailto</td>
-<td> prasxanth.kumar@gmail.com</td>
-</tr>
-<tr>
-<td>Homepage</td>
-<td> http://prasxanth.github.io/sxablono/</td>
-</tr>
-<tr>
-<td>Bug tracker</td>
-<td> https://github.com/prasxanth/sxablono/issues</td>
-</tr>
-<tr>
-<td>Source control</td>
-<td> http://github.com/sxablono.git</td>
-</tr>
-</tbody></table>
+<ul>
+<li><p><strong>Version</strong>: 1.0.0</p></li>
+<li><p><strong>Description</strong>: Skeleton template for Lisp project with test and documentation generator.</p></li>
+<li><p><strong>License</strong>: Unlicense.</p></li>
+<li><p><strong>Author</strong>: Prashanth Kumar</p></li>
+<li><p><strong>Mailto</strong>: prasxanth.kumar@gmail.com</p></li>
+<li><p><strong>Homepage</strong>: http://prasxanth.github.io/sxablono/</p></li>
+<li><p><strong>Bug tracker</strong>: https://github.com/prasxanth/sxablono/issues</p></li>
+<li><p><strong>Source control</strong>: http://github.com/sxablono.git</p></li>
+</ul>
 
 <p><a id='x-28SXABLONO-2EDOCS-3A-40PROJECT-STRUCTURE-20MGL-PAX-3ASECTION-29'></a></p>
 
@@ -107,9 +83,9 @@ Project name: <strong>sxablono</strong> <code>=&gt;</code> <em>skeleton</em> in 
 
 <p>The file and folder structure for the project are organized as follows,</p>
 
-<pre><code><span class="code">
-├── LICENSE
+<pre><code><span class="code">├── LICENSE
 ├── docs
+│   ├── build.lisp
 │   ├── docs.lisp
 │   ├── jquery.min.js
 │   ├── package.lisp
@@ -134,7 +110,7 @@ Project name: <strong>sxablono</strong> <code>=&gt;</code> <em>skeleton</em> in 
 <li><p>Documentation: <code>docs/</code></p></li>
 </ul>
 
-<p>The <code>sxablono.asd</code> contains all the system defintions for the source code, tests and documentation. The <code>package.lisp</code> in each directory contains the respective package definitions. The license is documented in the <code>LICENSE</code> file.</p>
+<p><code>sxablono.asd</code> contains all the system defintions for the source code, tests and documentation. The <code>package.lisp</code> file in each directory contains the respective package definitions. License documentation is in the <code>LICENSE</code> file.</p>
 
 <p>The following sections explain each of the components and directory contents in more detail.</p>
 
@@ -153,17 +129,25 @@ Project name: <strong>sxablono</strong> <code>=&gt;</code> <em>skeleton</em> in 
 
 <p><code>package.lisp</code> contains the usual definitions for <em>use</em>, <em>imports</em> and <em>exports</em>,</p>
 
-<pre><code><span class="code"><span class="paren1">(<span class="code">uiop:read-file-string <span class="string">"docs/package.lisp"</span></span>)</span>
-=&gt; <span class="paren1">(<span class="code"><i><span class="symbol">defpackage</span></i> <span class="keyword">#:sxablono.docs</span>
-      <span class="paren2">(<span class="code"><span class="keyword">:nicknames</span> <span class="keyword">#:sxdocs</span></span>)</span>
-      <span class="paren2">(<span class="code"><span class="keyword">:use</span> <span class="keyword">#:cl</span></span>)</span>
-      <span class="paren2">(<span class="code"><span class="keyword">:import-from</span> <span class="keyword">#:mgl-pax</span>
-            <span class="keyword">#:section</span>
-            <span class="keyword">#:defsection</span></span>)</span>
-      <span class="paren2">(<span class="code"><span class="keyword">:import-from</span> <span class="keyword">#:sxablono</span>
-            <span class="keyword">#:@aux</span>
-            <span class="keyword">#:@utils</span></span>)</span>
-      <span class="paren2">(<span class="code"><span class="keyword">:export</span> <span class="keyword">#:build</span></span>)</span></span>)</span></span></code></pre>
+<pre><code><span class="code"><span class="paren1">(<span class="code">uiop:read-file-string <span class="string">"../src/package.lisp"</span></span>)</span>
+=&gt; <span class="paren1">(<span class="code"><i><span class="symbol">defpackage</span></i> <span class="keyword">#:sxablono</span>
+   <span class="paren2">(<span class="code"><span class="keyword">:nicknames</span> <span class="keyword">#:sxbl</span></span>)</span>
+   <span class="paren2">(<span class="code"><span class="keyword">:use</span> <span class="keyword">#:cl</span></span>)</span>
+   <span class="paren2">(<span class="code"><span class="keyword">:import-from</span> <span class="keyword">#:mgl-pax</span>
+                 <span class="keyword">#:defsection</span></span>)</span>
+   <span class="paren2">(<span class="code"><span class="keyword">:export</span> <span class="keyword">#:do-the-job</span>
+        <span class="keyword">#:foo</span></span>)</span>
+   <span class="paren2">(<span class="code"><span class="keyword">:documentation</span> <span class="string">"This is docstring for the package.
+
+                   The package contains a function which does it's job by
+                   applying transformation to the first and second arguments.
+
+                   Note, despite the docstring indentation, it is displayed
+                   correctly. And PAX is smart enough to distinguish the common
+                   indentation and indentation of a code block below:
+
+                       (apply #'foo 42)
+                  "</span></span>)</span></span>)</span></span></code></pre>
 
 <p>The example files <code>aux.lisp</code> and <code>utils.lisp</code> contain the full definitions in the package (macros, functions etc.).</p>
 
@@ -175,15 +159,13 @@ Project name: <strong>sxablono</strong> <code>=&gt;</code> <em>skeleton</em> in 
 
 <p>The <a href="https://github.com/lispci/fiveam" >FIVEAM</a> framework is used for testing,</p>
 
-<pre><code><span class="code"><span class="paren1">(<span class="code">uiop:read-file-string <span class="string">"tests/package.lisp"</span></span>)</span>
+<pre><code><span class="code"><span class="paren1">(<span class="code">uiop:read-file-string <span class="string">"../tests/package.lisp"</span></span>)</span>
 =&gt; <span class="paren1">(<span class="code"><i><span class="symbol">defpackage</span></i> <span class="keyword">#:sxablono.tests</span>
-       <span class="paren2">(<span class="code"><span class="keyword">:nicknames</span> <span class="keyword">#:sxtests</span></span>)</span>
-       <span class="paren2">(<span class="code"><span class="keyword">:documentation</span> <span class="string">"Unit tests for SXABLONO"</span></span>)</span>
-       <span class="paren2">(<span class="code"><span class="keyword">:use</span> <span class="keyword">#:cl</span> <span class="keyword">#:fiveam</span></span>)</span>
-       <span class="paren2">(<span class="code"><span class="keyword">:shadowing-import-from</span> <span class="keyword">#:sxablono</span>
-                   <span class="keyword">#:foo</span>
-                   <span class="keyword">#:do-the-job</span></span>)</span>
-       <span class="paren2">(<span class="code"><span class="keyword">:export</span> <span class="keyword">#:principal-suite</span></span>)</span></span>)</span></span></code></pre>
+   <span class="paren2">(<span class="code"><span class="keyword">:nicknames</span> <span class="keyword">#:sxtests</span></span>)</span>
+   <span class="paren2">(<span class="code"><span class="keyword">:documentation</span> <span class="string">"Unit tests for SXABLONO"</span></span>)</span>
+   <span class="paren2">(<span class="code"><span class="keyword">:use</span> <span class="keyword">#:cl</span> <span class="keyword">#:fiveam</span> <span class="keyword">#:sxablono</span></span>)</span>
+   <span class="paren2">(<span class="code"><span class="keyword">:export</span> <span class="keyword">#:principal-suite</span>
+        <span class="keyword">#:run-principal-suite</span></span>)</span></span>)</span></span></code></pre>
 
 <p>As per Common Lisp convention, the filename containing the tests for each corresponding file in the <code>src/</code> folder is suffixed with <code>-tests</code>. Hence, <code>utils-tests.lisp</code> contains all the tests for <code>src/utils.lisp</code>, and <code>aux-tests.lisp</code> for <code>src/aux.lisp</code>.</p>
 
@@ -193,7 +175,7 @@ Project name: <strong>sxablono</strong> <code>=&gt;</code> <em>skeleton</em> in 
     ├── tests-suite.lisp
     └── utils-tests.lisp</span></code></pre>
 
-<p>The <code>tests-suite.lisp</code> contains the <code>principal-suite</code> which is the parent suite for all the tests.</p>
+<p>The <code>tests-suite.lisp</code> contains <code>principal-suite</code>, the parent suite for all the tests.</p>
 
 <p>To run the tests using <code>ASDF</code>,</p>
 
@@ -208,54 +190,53 @@ Project name: <strong>sxablono</strong> <code>=&gt;</code> <em>skeleton</em> in 
 
 <p><a href="http://melisgl.github.io/mgl-pax/" >MGL-PAX</a> is used to generate the documentation.</p>
 
-<pre><code><span class="code"><span class="paren1">(<span class="code">uiop:read-file-string <span class="string">"docs/package.lisp"</span></span>)</span>
+<pre><code><span class="code"><span class="paren1">(<span class="code">uiop:read-file-string <span class="string">"package.lisp"</span></span>)</span>
 =&gt; <span class="paren1">(<span class="code"><i><span class="symbol">defpackage</span></i> <span class="keyword">#:sxablono.docs</span>
-     <span class="paren2">(<span class="code"><span class="keyword">:nicknames</span> <span class="keyword">#:sxdocs</span></span>)</span>
-     <span class="paren2">(<span class="code"><span class="keyword">:use</span> <span class="keyword">#:cl</span></span>)</span>
-     <span class="paren2">(<span class="code"><span class="keyword">:import-from</span> <span class="keyword">#:mgl-pax</span>
-           <span class="keyword">#:section</span>
-           <span class="keyword">#:defsection</span></span>)</span>
-     <span class="paren2">(<span class="code"><span class="keyword">:import-from</span> <span class="keyword">#:sxablono</span>
-           <span class="keyword">#:@aux</span>
-           <span class="keyword">#:@utils</span></span>)</span>
-     <span class="paren2">(<span class="code"><span class="keyword">:export</span> <span class="keyword">#:build</span></span>)</span></span>)</span></span></code></pre>
+   <span class="paren2">(<span class="code"><span class="keyword">:nicknames</span> <span class="keyword">#:sxdocs</span></span>)</span>
+   <span class="paren2">(<span class="code"><span class="keyword">:use</span> <span class="keyword">#:cl</span> <span class="keyword">#:iterate</span></span>)</span>
+   <span class="paren2">(<span class="code"><span class="keyword">:import-from</span> <span class="keyword">#:mgl-pax</span>
+                 <span class="keyword">#:section</span>
+                 <span class="keyword">#:defsection</span></span>)</span>
+   <span class="paren2">(<span class="code"><span class="keyword">:import-from</span> <span class="keyword">#:sxablono</span>
+                 <span class="keyword">#:@aux</span>
+         <span class="keyword">#:@utils</span></span>)</span>
+   <span class="paren2">(<span class="code"><span class="keyword">:export</span> <span class="keyword">#:build</span></span>)</span></span>)</span></span></code></pre>
 
-<p><code>docs.lisp</code> contains the main narrative and contents. It includes both handwritten documentation and docstrings from functions in <code>src/</code>.</p>
+<p><code>docs.lisp</code> contains the main narrative and contents. It includes both <em>handwritten</em> documentation and docstrings from functions in <code>src/</code>.</p>
 
 <pre><code><span class="code">├── docs
+│   ├── build.lisp
 │   ├── docs.lisp
 │   ├── jquery.min.js
 │   ├── package.lisp
 │   ├── style.css
 │   └── toc.min.js</span></code></pre>
 
-<p>Documentation is generated using the <code>build</code> function.</p>
+<p>Documentation is generated using the <code>build</code> function defined in <code>build.lisp</code>.</p>
 
 <p>This does the following,</p>
 
 <ul>
-<li><p>Updates <em>only</em> the html file in <code>docs/build/</code>. The <code>build/</code> sub-directory is created if it does not exist.</p></li>
-<li><p>Copies <code>style.css</code>, <code>jquery.min.js</code> and <code>tocs.min.js</code> from <code>docs/</code> to <code>docs/build/</code>. <code>style.css</code> is a custom stylesheet.</p></li>
-<li><p>Generates and overwrites the <code>README</code> and <code>README.md</code> files in the <code>spectre/</code> root directory</p></li>
+<li><p>Updates <em>only</em> the <code>index.html</code> file. This file is created if it does not exist.</p></li>
+<li><p>Generates and overwrites the <code>README</code> and <code>README.md</code> files in the project root directory</p></li>
 </ul>
-
-<p>Custom <code>CSS</code> and JS files can be provided as arguments to the build function. If these files are not found, then the defaults are copied from <code>docs/</code>.</p>
 
 <p>After generating the documentation, the folder structure should resemble,</p>
 
 <pre><code><span class="code">├── README
 ├── README.md
 ├── docs
-│   ├── build
-│   │   ├── index.html
-│   │   ├── jquery.min.js
-│   │   ├── style.css
-│   │   └── toc.min.js
+│   ├── build.lisp
 │   ├── docs.lisp
+│   ├── index.html
 │   ├── jquery.min.js
 │   ├── package.lisp
 │   ├── style.css
 │   └── toc.min.js</span></code></pre>
+
+<p>A single <code>index.html</code> simplifies maintenance. It also eases <a href="https://pages.github.com/" >hosting on Github</a>.</p>
+
+<p>Larger documentation (distributed across multiple files) can be placed in a separate <code>build/</code> sub-directory. However, this makes the process of hosting the documentation slightly more complicated as the contents have to be moved or copied to the <code>gh-pages</code> branch of the repository.</p>
 
 <p><a id='x-28SXABLONO-2EDOCS-3A-40HOW-TO-USE-20MGL-PAX-3ASECTION-29'></a></p>
 
@@ -304,6 +285,7 @@ Project name: <strong>sxablono</strong> <code>=&gt;</code> <em>skeleton</em> in 
 
 <pre><code><span class="code">├── LICENSE
 ├── docs
+│   ├── build.lisp
 │   ├── docs.lisp
 │   ├── jquery.min.js
 │   ├── package.lisp
@@ -318,8 +300,7 @@ Project name: <strong>sxablono</strong> <code>=&gt;</code> <em>skeleton</em> in 
     ├── analyze-tests.lisp
     ├── package.lisp
     ├── plot-tests.lisp
-    └── tests-suite.lisp
-</span></code></pre>
+    └── tests-suite.lisp</span></code></pre>
 
 <p></li><li> Create a softlink to <code>~/quicklisp/local-projects</code>,</p>
 
@@ -337,6 +318,30 @@ Project name: <strong>sxablono</strong> <code>=&gt;</code> <em>skeleton</em> in 
 
 <pre><code><span class="code"><span class="paren1">(<span class="code">ql:quickload <span class="keyword">:spectre.docs</span></span>)</span>
 <span class="paren1">(<span class="code">spectre.docs:build</span>)</span></span></code></pre>
+
+<p>The folder structure should now look like,</p>
+
+<pre><code><span class="code">├── LICENSE
+├── README
+├── README.md
+├── docs
+│   ├── build.lisp
+│   ├── docs.lisp
+│   ├── index.html
+│   ├── jquery.min.js
+│   ├── package.lisp
+│   ├── style.css
+│   └── toc.min.js
+├── spectre.asd
+├── src
+│   ├── analyze.lisp
+│   ├── package.lisp
+│   └── plot.lisp
+└── tests
+    ├── analyze-tests.lisp
+    ├── package.lisp
+    ├── plot-tests.lisp
+    └── tests-suite.lisp</span></code></pre>
 
 <p></li>
 </ol></p>
